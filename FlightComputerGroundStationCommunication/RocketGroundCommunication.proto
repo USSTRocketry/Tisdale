@@ -39,3 +39,8 @@ message InfoExchange
     uint32 radio_version       = 1;
     uint32 proto_3_msg_version = 2;
 }
+
+message Ack
+{
+    uint32 response_to_which_message = 1;
+}

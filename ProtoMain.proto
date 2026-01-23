@@ -12,6 +12,7 @@ message MainMessage
         SwitchRadioFrequency switch_radio_frequency = 2;
         DebugMessage debug_msg                      = 3;
         InfoExchange info_exchange                  = 4;
+        Ack ack                                     = 5;
     }
 }
 
