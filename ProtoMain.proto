@@ -20,5 +20,6 @@ message LogMessage
 {
     uint32 time_stamp        = 1;
     uint32 severity          = 2;
-    MainMessage main_message = 3;
+    uint32 location          = 3;
+    MainMessage main_message = 4;
 }
