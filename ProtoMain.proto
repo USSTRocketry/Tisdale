@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Proto;
 
-import "FlightComputerGroundStationCommunication/RocketGroundCommunication.proto";
+import "RocketGroundCommunication.proto";
 
 message MainMessage
 {
