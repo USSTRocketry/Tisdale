@@ -2,9 +2,26 @@ syntax = "proto3";
 
 package Proto;
 
+// Mirrors ra::turtleford::Category (keep value numbers in sync)
+enum State {
+    UNKNOWN        = 0;
+    COMMUNICATIONS = 1;
+    APPLICATION    = 2;
+    PLATFORM       = 3;
+    FLIGHT_CONTROL = 4;
+    SENSORS        = 5;
+    STORAGE        = 6;
+    TASKING        = 7;
+}
+message Control
+{
+    uint32 timestamp = 1;
+    State state      = 2;
+}
+
 message InFlightData
 {
-    uint32 timestamp_ms          = 1;
+    Control control              = 1;
     BMP_Data bmp_data            = 2;
     float accel_gyro_temperature = 3;
     VectorF accel                = 4;
@@ -40,7 +57,4 @@ message InfoExchange
     uint32 proto_3_msg_version = 2;
 }
 
-message Ack
-{
-    uint32 response_to_which_message = 1;
-}
+message Ack { uint32 response_to_which_message = 1; }

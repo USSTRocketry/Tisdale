@@ -13,6 +13,7 @@ message MainMessage
         DebugMessage debug_msg                      = 3;
         InfoExchange info_exchange                  = 4;
         Ack ack                                     = 5;
+        Control control                             = 6;
     }
 }
 
