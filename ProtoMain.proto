@@ -17,10 +17,23 @@ message MainMessage
     }
 }
 
+// Mirrors ra::turtleford::Category (keep value numbers in sync)
+enum Category
+{
+    UNKNOWN        = 0;
+    COMMUNICATIONS = 1;
+    APPLICATION    = 2;
+    PLATFORM       = 3;
+    FLIGHT_CONTROL = 4;
+    SENSORS        = 5;
+    STORAGE        = 6;
+    TASKING        = 7;
+}
+
 message LogMessage
 {
     uint32 time_stamp        = 1;
     uint32 severity          = 2;
-    uint32 location          = 3;
+    Category category        = 3;
     MainMessage main_message = 4;
 }
