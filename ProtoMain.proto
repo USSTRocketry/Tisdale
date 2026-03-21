@@ -33,7 +33,6 @@ enum Category
 
 message LogMessage
 {
-    uint32 timestamp         = 1;
     uint32 severity          = 2;
     Category category        = 3;
     MainMessage main_message = 4;
