@@ -4,28 +4,23 @@ package Proto;
 
 enum FlightState
 {
-    Unknown    = 0;
-    Unarmed    = 1;
-    GroundIdle = 2;
-    InFlight   = 3;
-    MainChute  = 4;
+    FLIGHTSTATE_UNKNOWN = 0;
+    UNARMED             = 1;
+    GROUNDIDLE          = 2;
+    INFLIGHT            = 3;
+    MAINCHUTE           = 4;
 }
 
-message Control
-{
-    uint32 timestamp           = 1;
-    optional FlightState state = 2;
-}
+message Control { optional FlightState state = 1; }
 
 message InFlightData
 {
-    optional Control control     = 1;
-    BMP_Data bmp_data            = 2;
-    float accel_gyro_temperature = 3;
-    VectorF accel                = 4;
-    VectorF gyro                 = 5;
-    VectorF magnetometer         = 6;
-    float thermometer            = 7;
+    BMP_Data bmp_data            = 1;
+    float accel_gyro_temperature = 2;
+    VectorF accel                = 3;
+    VectorF gyro                 = 4;
+    VectorF magnetometer         = 5;
+    float thermometer            = 6;
 
     message BMP_Data
     {

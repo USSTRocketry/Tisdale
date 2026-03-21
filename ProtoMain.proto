@@ -6,33 +6,34 @@ import "RocketGroundCommunication.proto";
 
 message MainMessage
 {
+    uint32 timestamp = 1;
     oneof message_type
     {
-        InFlightData in_flight_data                 = 1;
-        SwitchRadioFrequency switch_radio_frequency = 2;
-        DebugMessage debug_msg                      = 3;
-        InfoExchange info_exchange                  = 4;
-        Ack ack                                     = 5;
-        Control control                             = 6;
+        InFlightData in_flight_data                 = 2;
+        SwitchRadioFrequency switch_radio_frequency = 3;
+        DebugMessage debug_msg                      = 4;
+        InfoExchange info_exchange                  = 5;
+        Ack ack                                     = 6;
+        Control control                             = 7;
     }
 }
 
 // Mirrors ra::turtleford::Category (keep value numbers in sync)
 enum Category
 {
-    UNKNOWN        = 0;
-    COMMUNICATIONS = 1;
-    APPLICATION    = 2;
-    PLATFORM       = 3;
-    FLIGHT_CONTROL = 4;
-    SENSORS        = 5;
-    STORAGE        = 6;
-    TASKING        = 7;
+    CATEGORY_UNKNOWN = 0;
+    COMMUNICATIONS   = 1;
+    APPLICATION      = 2;
+    PLATFORM         = 3;
+    FLIGHT_CONTROL   = 4;
+    SENSORS          = 5;
+    STORAGE          = 6;
+    TASKING          = 7;
 }
 
 message LogMessage
 {
-    uint32 time_stamp        = 1;
+    uint32 timestamp         = 1;
     uint32 severity          = 2;
     Category category        = 3;
     MainMessage main_message = 4;
